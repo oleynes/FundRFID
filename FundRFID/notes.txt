@@ -1,0 +1,68 @@
+Notes:
+
+api_endpoint - uses REST framework to enable app interactions through api read/write requests
+forms - handles all models and views for club forms, provides admin integration for easy management
+home - handles homepage views and models, integration with admin so new events and stories can be added easily
+manager - handles genboard data storage for use with RFID technologies, used by api_endpoint to store user data, provides view for genboard member score lookup using email and PAWS ID.
+
+TODO (4/23):
+-migrate changes to manager app
+-test admin index changes
+-write url configurations for individual apps
+-write views for home, forms, and manager
+-write models for home, forms and api_endpoint
+-write base template 
+-install css library
+-write api request handlers
+-test api calls
+-test admin views
+-test site-wide features
+-add about page to home
+-add contact/social media page to home
+-add fundrace signup form that automatically assigns user a tag
+-write android/ios app
+-full pre-production bug hunting and tests
+-deployment
+
+
+
+
+///ignore below
+{% if app_list %}
+    {% for app in app_list %}
+        <div class="app-{{ app.app_label }} module">
+        <table>
+        <caption>
+            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
+        </caption>
+        {% for model in app.models %}
+            <tr class="model-{{ model.object_name|lower }}">
+            {% if model.admin_url %}
+                <th scope="row"><a href="{{ model.admin_url }}">{{ model.name }}</a></th>
+            {% else %}
+                <th scope="row">{{ model.name }}</th>
+            {% endif %}
+
+            {% if model.add_url %}
+                <td><a href="{{ model.add_url }}" class="addlink">{% trans 'Add' %}</a></td>
+            {% else %}
+                <td>&nbsp;</td>
+            {% endif %}
+
+            {% if model.admin_url %}
+                {% if model.view_only %}
+                <td><a href="{{ model.admin_url }}" class="viewlink">{% trans 'View' %}</a></td>
+                {% else %}
+                <td><a href="{{ model.admin_url }}" class="changelink">{% trans 'Change' %}</a></td>
+                {% endif %}
+            {% else %}
+                <td>&nbsp;</td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>{% trans 'You don’t have permission to view or edit anything.' %}</p>
+{% endif %}
