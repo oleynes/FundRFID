@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../static/application.css">
     {% block head %}{% endblock %}
 </head>
-<nav>
-    <ul class="navlist">
-        <li><a href="/" class="navitem">Home</a></li>
-        <li><a href="/forms/" class="navitem">Forms</a></li>
-        {% if not user.is_authenticated %}
-        <li><a href="/fundrace/register/" class="navitem">FundRace Signup</a></li>
-        {% endif %}
-        <li><a href="/fundrace/lookup/" class="navitem">FundRace Lookup</a></li>
-        {% block nav %}
-        {% endblock %}
-    </ul>
-</nav>
+
 <body class="main">
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text"><a href="/" class="title">TCNJ Barkada</a></li>
+            <li><a href="fundrace/" class="border-yellow">FundRace</a></li>
+            <li><a href="events/" class="border-blue">Calendar</a></li>
+            <li><a href="about/" class="border-red">About</a></li>
+            <li><a href="forms/" class="border-yellow">Forms</a></li>
+            <li><a href="about/eboard/" class="border-blue">E-Board</a></li>
+            {% if user.is_superuser %}
+            <li><a href="admin/" class="border-red">Admin</a></li>
+            {% endif %}
+            {% block nav_left %}
+            {% endblock %}
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li><a href="admin/">Login</a></li>
+            {% block nav_right %}
+            {% endblock %}
+        </ul>
+    </div>
+</div>
 
 {% block body %}
 {% endblock %}
@@ -28,12 +41,5 @@
 </body>
 </html>
 
-<ul class="menu menu-hover-lines">
-  <li class="active"><a href="/">Home</a></li>
-  <li><a href="home/about/">About Us</a></li>
-  <li><a href="forms/">Google Forms</a></li>
-  <li><a href="fundrace/register/">FundRace Signup</a></li>
-  <li><a href="fundrace/lookup/">FundRace Lookup</a></li>
-  <li><a href="#">Contact</a></li>
-</ul>
+
 
