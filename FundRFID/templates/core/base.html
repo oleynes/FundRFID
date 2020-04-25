@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'application.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js">
+    <link rel="stylesheet" type="text/css" href="../../static/application.css">
     {% block head %}{% endblock %}
 </head>
 <nav>
@@ -19,10 +20,20 @@
         {% endblock %}
     </ul>
 </nav>
-<body>
+<body class="main">
 
 {% block body %}
 {% endblock %}
 
 </body>
 </html>
+
+<ul class="menu menu-hover-lines">
+  <li class="active"><a href="/">Home</a></li>
+  <li><a href="home/about/">About Us</a></li>
+  <li><a href="forms/">Google Forms</a></li>
+  <li><a href="fundrace/register/">FundRace Signup</a></li>
+  <li><a href="fundrace/lookup/">FundRace Lookup</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
