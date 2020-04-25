@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'application.css' %}">
+    {% block head %}{% endblock %}
 </head>
+<nav>
+    <ul class="navlist">
+        <li><a href="/" class="navitem">Home</a></li>
+        <li><a href="/forms/" class="navitem">Forms</a></li>
+        {% if not user.is_authenticated %}
+        <li><a href="/fundrace/register/" class="navitem">FundRace Signup</a></li>
+        {% endif %}
+        <li><a href="/fundrace/lookup/" class="navitem">FundRace Lookup</a></li>
+        {% block nav %}
+        {% endblock %}
+    </ul>
+</nav>
 <body>
-$END$
+
+{% block body %}
+{% endblock %}
+
 </body>
 </html>
