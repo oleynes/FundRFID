@@ -23,7 +23,7 @@ class Member(models.Model):
 	email = models.EmailField(max_length=254)
 	score = models.IntegerField(blank=True)
 	img = models.ImageField(upload_to=create_upload_url, blank=True, verbose_name='Member Image')
-	PAWS_ID = models.CharField(max_length=6, verbose_name='PAWS ID')
+	PAWS_ID = models.CharField(max_length=6, verbose_name='PAWS ID', primary_key=True)
 	class_year = models.CharField(max_length=2, choices=CLASS_YEAR, default='FR')
 
 
