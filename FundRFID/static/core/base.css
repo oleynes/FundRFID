@@ -1,0 +1,14 @@
+.border-yellow{
+  border: solid thin #FCD116;
+  border-radius: 8px 8px;
+}
+
+.border-blue{
+  border: solid thin #0038a8;
+  border-radius: 8px 8px;
+}
+
+.border-red{
+  border: solid thin #ce1126;
+  border-radius: 8px 8px;
+}

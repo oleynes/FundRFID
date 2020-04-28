@@ -5,12 +5,12 @@
     <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../static/application.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/base.css' %}">
     {% block head %}{% endblock %}
 </head>
 
 <body class="main">
-<div class="top-bar">
+<div class="top-bar" style="background-color: #eae4e4; color: #2d2b2b">
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text"><a href="/" class="title">TCNJ Barkada</a></li>
