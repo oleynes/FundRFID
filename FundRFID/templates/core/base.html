@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'core/base.css' %}">
+    {% load compress %}
+
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static '/_settings.scss' %}">
+    {% endcompress %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+>>>>>>> 4747e5d9e68f06f2070cd83e7a6cc5c897c4fe22
     {% block head %}{% endblock %}
 </head>
 
 <body class="main">
+<<<<<<< HEAD
 <div class="top-bar" style="background-color: #eae4e4; color: #2d2b2b">
     <div class="top-bar-left">
         <ul class="menu">
@@ -19,21 +27,50 @@
             <li><a href="about/" class="border-red">About</a></li>
             <li><a href="forms/" class="border-yellow">Forms</a></li>
             <li><a href="about/eboard/" class="border-blue">E-Board</a></li>
+=======
+<nav class="navbar nav-bg navbar-expand-lg">
+    <a class="navbar-brand" href="/">TCNJ Barkada</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link btn-yellow" href="about/">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle btn-red" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FundRace</a>
+                <div class="dropdown-menu"aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="fundrace/register/">Register</a>
+                    <a class="dropdown-item" href="fundrace/lookup">Check Score</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-blue" href="events/">Events Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-yellow" href="forms/">Forms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-red" href="about/eboard">E-Board</a>
+            </li>
+>>>>>>> 4747e5d9e68f06f2070cd83e7a6cc5c897c4fe22
             {% if user.is_superuser %}
-            <li><a href="admin/" class="border-red">Admin</a></li>
+            <li class="nav-item">
+                <a class="nav-link btn-blue" href="admin/">Admin</a>
+            </li>
             {% endif %}
-            {% block nav_left %}
+            {% block nav %}
             {% endblock %}
         </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="admin/">Staff Login</a>
+            </li>
+        </ul></div>
+
     </div>
-    <div class="top-bar-right">
-        <ul class="menu">
-            <li><a href="admin/">Login</a></li>
-            {% block nav_right %}
-            {% endblock %}
-        </ul>
-    </div>
-</div>
+</nav>
+
+
 
 {% block body %}
 {% endblock %}

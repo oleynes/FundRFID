@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'manager',
     'forms',
     'api_endpoint',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,17 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = [
+    'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
 
 WSGI_APPLICATION = 'FundRFID.wsgi.application'
 
@@ -123,3 +135,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+COMPRESS_ROOT = 'C:/Users/oleyn/Desktop/FundRFID/FundRFID/static'
+COMPRESS_URL = '/static/'

@@ -1,0 +1,47 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+
+$theme-colors: (
+  "accent-red": #ce1126,
+  "accent-yellow": #fcd116,
+  "accent-blue": #0038a8,
+  "dark":  #2d2b2b,
+  "light": #eae4e4
+);
+
+.btn-yellow{
+  background-color: theme-color("dark");
+  color: theme-color("light");
+  border: thin solid theme-color("accent-yellow");
+  border-radius: 8px 8px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.btn-red{
+  background-color: theme-color("dark");
+  color: theme-color("light");
+  border: thin solid theme-color("accent-red");
+  border-radius: 8px 8px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.btn-blue{
+  background-color: theme-color("dark");
+  color: theme-color("light");
+  border: thin solid theme-color("accent-blue");
+  border-radius: 8px 8px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.nav-bg{
+  background-color: theme-color("dark");
+  color: theme-color("light");
+}
+
+.main{
+  background-color: theme-color("light");
+  color: theme-color("dark");
+}
