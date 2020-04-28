@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'manager',
     'forms',
     'api_endpoint',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,17 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = [
+    'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+COMPRESS_ROOT = '/static/'
 
 WSGI_APPLICATION = 'FundRFID.wsgi.application'
 
