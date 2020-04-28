@@ -81,7 +81,7 @@ STATICFILES_FINDERS = [
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
-COMPRESS_ROOT = '/static/'
+
 
 WSGI_APPLICATION = 'FundRFID.wsgi.application'
 
@@ -135,3 +135,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static'
+COMPRESS_ROOT = '/static'
+COMPRESS_URL = '/static/'
