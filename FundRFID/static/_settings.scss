@@ -9,30 +9,32 @@ $theme-colors: (
   "light": #eae4e4
 );
 
+$navpadding: 10px;
+
 .btn-yellow{
   background-color: theme-color("dark");
   color: theme-color("light");
-  border: thin solid theme-color("accent-yellow");
+  border: 2px solid theme-color("accent-yellow");
   border-radius: 8px 8px;
-  padding: 6px;
+  padding: $navpadding;
   font-size: 16px;
 }
 
 .btn-red{
   background-color: theme-color("dark");
   color: theme-color("light");
-  border: thin solid theme-color("accent-red");
+  border: 2px solid theme-color("accent-red");
   border-radius: 8px 8px;
-  padding: 6px;
+  padding: $navpadding;
   font-size: 16px;
 }
 
 .btn-blue{
   background-color: theme-color("dark");
   color: theme-color("light");
-  border: thin solid theme-color("accent-blue");
+  border: 2px solid theme-color("accent-blue");
   border-radius: 8px 8px;
-  padding: 6px;
+  padding: $navpadding;
   font-size: 16px;
 }
 
@@ -45,3 +47,88 @@ $theme-colors: (
   background-color: theme-color("light");
   color: theme-color("dark");
 }
+
+.list-item{
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.brand{
+  color: theme-color("light");
+  background-color: theme-color("dark");
+  font-size: 18px;
+}
+
+.item{
+  background-color: theme-color("dark");
+  color: theme-color("light");
+}
+
+.item:hover{
+  color: darken(theme-color("light"), 25%);
+  background-color: darken(theme-color("dark"), 10%);
+}
+
+.item:hover:after{
+  transition-delay: 0.5s;
+}
+
+.theme-colors{
+  color: theme-color("light");
+  background-color: theme-color("dark");
+}
+
+.theme-colors-inactive{
+  color: theme-color("light");
+  background-color: theme-color("dark");
+}
+
+.theme-colors:hover{
+  color: darken(theme-color("light"), 25%);
+
+}
+
+.fa-yellow{
+  color: theme-color("accent-yellow");
+}
+
+.fa-red{
+  color: theme-color("accent-red");
+}
+
+.fa-blue{
+  color: theme-color("accent-blue");
+}
+
+.sidebar {
+  background-color: theme-color("light");
+  color: theme-color("dark");
+  width: fit-content;
+  height: auto;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.fb{
+  color: #4267B2;
+  font-size: 30px;
+}
+
+.insta{
+  color: #C13584;
+  font-size: 30px;
+}
+
+.email{
+  color: #B23121;
+  font-size: 30px;
+}
+
+
+
