@@ -12,63 +12,59 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
->>>>>>> 4747e5d9e68f06f2070cd83e7a6cc5c897c4fe22
+    <script src="https://kit.fontawesome.com/4a76c527eb.js" crossorigin="anonymous"></script>
+
     {% block head %}{% endblock %}
 </head>
 
 <body class="main">
-<<<<<<< HEAD
-<div class="top-bar" style="background-color: #eae4e4; color: #2d2b2b">
-    <div class="top-bar-left">
-        <ul class="menu">
-            <li class="menu-text"><a href="/" class="title">TCNJ Barkada</a></li>
-            <li><a href="fundrace/" class="border-yellow">FundRace</a></li>
-            <li><a href="events/" class="border-blue">Calendar</a></li>
-            <li><a href="about/" class="border-red">About</a></li>
-            <li><a href="forms/" class="border-yellow">Forms</a></li>
-            <li><a href="about/eboard/" class="border-blue">E-Board</a></li>
-=======
-<nav class="navbar nav-bg navbar-expand-lg">
-    <a class="navbar-brand" href="/">TCNJ Barkada</a>
+<nav class="navbar nav-bg navbar-expand-xl">
+    <a class="navbar-brand theme-colors" href="/">TCNJ Barkada</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link btn-yellow" href="about/">About Us</a>
+            <li class="nav-item active list-item">
+                <a class="nav-link btn-yellow item" href="about/">About Us</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle btn-red" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FundRace</a>
-                <div class="dropdown-menu"aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="fundrace/register/">Register</a>
-                    <a class="dropdown-item" href="fundrace/lookup">Check Score</a>
+            <li class="nav-item dropdown list-item">
+                <a class="nav-link dropdown-toggle btn-red item" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FundRace</a>
+                <div class="dropdown-menu theme-colors" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item item" href="fundrace/register/">Register</a>
+                    <a class="dropdown-item item" href="fundrace/lookup">Check Score</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link btn-blue" href="events/">Events Calendar</a>
+            <li class="nav-item list-item">
+                <a class="nav-link btn-blue item" href="events/">Events Calendar</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link btn-yellow" href="forms/">Forms</a>
+            <li class="nav-item list-item">
+                <a class="nav-link btn-yellow item" href="forms/">Forms</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link btn-red" href="about/eboard">E-Board</a>
+            <li class="nav-item list-item">
+                <a class="nav-link btn-red item" href="about/eboard">E-Board</a>
             </li>
->>>>>>> 4747e5d9e68f06f2070cd83e7a6cc5c897c4fe22
+
             {% if user.is_superuser %}
-            <li class="nav-item">
+            <li class="nav-item list-item">
                 <a class="nav-link btn-blue" href="admin/">Admin</a>
+                <a class="nav-link btn-yellow" href="logout/"><span class="fa-red fas fa-sign-in"></span> Logout</a>
             </li>
             {% endif %}
             {% block nav %}
             {% endblock %}
         </ul>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="admin/">Staff Login</a>
+        <ul class="nav navbar-nav mr-auto navbar-right">
+            <li class="nav-item list-item"><a href="https://www.facebook.com/tcnjbkad/" class="item dropdown-item"><i class="fab fa-facebook fb"></i></a></li>
+            <li class="nav-item list-item"><a href="https://instagram.com/tcnjbarkada" class="item dropdown-item"><i class="fab fa-instagram-square insta"></i></a></li>
+            <li class="nav-item list-item"><a href="mailto:barkada@tcnj.edu" class="item dropdown-item"><span class="fas fa-envelope email"></span></a></li>
+            <li class="nav-item list-item">
+                <a class="nav-link theme-colors" href="admin/"> Staff Login</a>
             </li>
-        </ul></div>
-
+        </ul>
     </div>
 </nav>
+
+
+
 
 
 
