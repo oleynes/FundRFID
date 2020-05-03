@@ -1,8 +1,11 @@
 from django import forms
 from .models import Member
+from crispy_forms.helper import FormHelper
 
 
 class MemberForm(forms.ModelForm):
+    helper = FormHelper()
+
     class Meta:
         model = Member
         fields = ['name', 'email', 'PAWS_ID', 'class_year']
