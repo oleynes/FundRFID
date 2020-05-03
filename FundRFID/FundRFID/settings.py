@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'forms',
     'api_endpoint',
     'compressor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -137,5 +138,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
 # COMPRESS_ROOT = 'C:/Users/oleyn/Desktop/FundRFID/FundRFID/static'
-COMPRESS_ROOT = '/static/'
+COMPRESS_ROOT = '/home/oleynes/Desktop/Software/FundRFID/FundRFID/static/'
 COMPRESS_URL = '/static/'
+
+# Crispy Form Setup
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
