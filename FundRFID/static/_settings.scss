@@ -2,45 +2,61 @@
 
 
 $theme-colors: (
-  "accent-red": #ce1126,
-  "accent-yellow": #fcd116,
-  "accent-blue": #0038a8,
+  "gold": #D38F29,
+  "red": #B32227,
   "dark":  #2d2b2b,
-  "light": #eae4e4
+  "light": #eae4e4,
+  "bg-light": #c2cad0
 );
 
 $navpadding: 10px;
+$btn-border-sz: 3px;
 
-.btn-yellow{
-  background-color: theme-color("dark");
+.btn-gold{
+  background-color: rgba(0, 0, 0, 0.0);
   color: theme-color("light");
-  border: 2px solid theme-color("accent-yellow");
+  border: $btn-border-sz solid theme-color("gold");
   border-radius: 8px 8px;
   padding: $navpadding;
   font-size: 16px;
 }
 
 .btn-red{
-  background-color: theme-color("dark");
+  background-color: rgba(0, 0, 0, 0.0);
   color: theme-color("light");
-  border: 2px solid theme-color("accent-red");
+  border: $btn-border-sz solid theme-color("red");
   border-radius: 8px 8px;
   padding: $navpadding;
   font-size: 16px;
 }
 
-.btn-blue{
-  background-color: theme-color("dark");
-  color: theme-color("light");
-  border: 2px solid theme-color("accent-blue");
+.btn-inverse{
+  background-color: rgba(0, 0, 0, 0.0);
+  color: theme-color("dark");
+  border: $btn-border-sz solid theme-color("dark");
   border-radius: 8px 8px;
   padding: $navpadding;
   font-size: 16px;
 }
+
+.btn-white{
+  background-color: rgba(0, 0, 0, 0.0);
+  color: theme-color("light");
+  border: $btn-border-sz solid theme-color("light");
+  border-radius: 8px 8px;
+  padding: $navpadding;
+  font-size: 16px;
+}
+
 
 .nav-bg{
-  background-color: theme-color("dark");
-  color: theme-color("light");
+  background-color: theme-color("bg-light");
+  color: theme-color("dark");
+}
+
+.logo-sz{
+  width: 90px;
+  height: 90px;
 }
 
 .main{
@@ -60,13 +76,18 @@ $navpadding: 10px;
 }
 
 .item{
-  background-color: theme-color("dark");
-  color: theme-color("light");
+  background-color: rgba(0, 0, 0, 0);
+  color: theme-color("dark");
+}
+
+.item-inactive{
+  background-color: rgba(0, 0, 0, 0);
+  color: theme-color("dark");
 }
 
 .item:hover{
-  color: darken(theme-color("light"), 25%);
-  background-color: darken(theme-color("dark"), 10%);
+  color: darken(theme-color("dark"), 25%);
+  background-color: darken(theme-color("bg-light"), 10%);
 }
 
 .item:hover:after{
@@ -74,31 +95,28 @@ $navpadding: 10px;
 }
 
 .theme-colors{
-  color: theme-color("light");
-  background-color: theme-color("dark");
+  background-color: theme-color("bg-light");
+  color: theme-color("dark");
 }
 
 .theme-colors-inactive{
-  color: theme-color("light");
-  background-color: theme-color("dark");
+  background-color: theme-color("bg-light");
+  color: theme-color("dark");
 }
 
 .theme-colors:hover{
-  color: darken(theme-color("light"), 25%);
+  color: darken(theme-color("dark"), 25%);
 
 }
 
-.fa-yellow{
-  color: theme-color("accent-yellow");
+.fa-gold{
+  color: theme-color("gold");
 }
 
 .fa-red{
-  color: theme-color("accent-red");
+  color: theme-color("red");
 }
 
-.fa-blue{
-  color: theme-color("accent-blue");
-}
 
 .sidebar {
   background-color: theme-color("light");
@@ -130,5 +148,8 @@ $navpadding: 10px;
   font-size: 30px;
 }
 
+.nav-bottom-border{
+  border-bottom: black solid medium;
+}
 
 
