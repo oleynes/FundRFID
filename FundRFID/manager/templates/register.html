@@ -1,1 +1,12 @@
 {% extends 'core/base.html' %}
+
+{% block body %}
+
+<h2>Please fill in the form below to register* for AAA's FundRace</h2>
+<p>*Please remember to pay [PERSON] $[PRICE] by [DATE]</p>
+<form action="fundrace/register/" method="post">
+
+    {% load crispy_forms_tag %}
+    {% crispy form %}
+</form>
+{% endblock %}
