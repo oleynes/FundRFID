@@ -1,4 +1,6 @@
 env/
 .idea/
-__pycache__/
-migrations/
+FundRFID/api_endpoint/migrations/
+FundRFID/forms/migrations/
+FundRFID/home/migrations/
+FundRFID/manager/migrations/
