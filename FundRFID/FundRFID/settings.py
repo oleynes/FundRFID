@@ -136,5 +136,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
-COMPRESS_ROOT = 'C:/Users/oleyn/Desktop/FundRFID/FundRFID/static'
+# COMPRESS_ROOT = 'C:/Users/oleyn/Desktop/FundRFID/FundRFID/static'
+COMPRESS_ROOT = '/static/'
 COMPRESS_URL = '/static/'
