@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TCNJ Barkada | {% block title %}{% endblock %}</title>
+    <title>TCNJ AAA | {% block title %}{% endblock %}</title>
     {% load static %}
     {% load compress %}
 
@@ -18,13 +18,13 @@
 </head>
 
 <body class="main">
-<nav class="navbar nav-bg navbar-expand-xl">
-    <a class="navbar-brand theme-colors" href="/">TCNJ Barkada</a>
+<nav class="navbar nav-bg nav-bottom-border navbar-expand-xl">
+    <a class="navbar-brand theme-colors " href="/"><img src="{% static 'assets/logo.jpg' %}" class="img-fluid img-thumbnail logo-sz" alt="Asian American Association"></a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active list-item">
-                <a class="nav-link btn-yellow item" href="about/">About Us</a>
+                <a class="nav-link btn-gold item" href="about/">About Us</a>
             </li>
             <li class="nav-item dropdown list-item">
                 <a class="nav-link dropdown-toggle btn-red item" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FundRace</a>
@@ -34,28 +34,28 @@
                 </div>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-blue item" href="events/">Events Calendar</a>
+                <a class="nav-link btn-gold item" href="events/">Events Calendar</a>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-yellow item" href="forms/">Forms</a>
+                <a class="nav-link btn-red item" href="forms/">Forms</a>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-red item" href="about/eboard">E-Board</a>
+                <a class="nav-link btn-gold item" href="about/eboard">E-Board</a>
             </li>
 
             {% if user.is_superuser %}
             <li class="nav-item list-item">
-                <a class="nav-link btn-blue" href="admin/">Admin</a>
-                <a class="nav-link btn-yellow" href="logout/"><span class="fa-red fas fa-sign-in"></span> Logout</a>
+                <a class="nav-link btn-red" href="admin/">Admin</a>
+                <a class="nav-link btn-gold" href="logout/"><span class="fa-red fas fa-sign-in"></span> Logout</a>
             </li>
             {% endif %}
             {% block nav %}
             {% endblock %}
         </ul>
         <ul class="nav navbar-nav mr-auto navbar-right">
-            <li class="nav-item list-item"><a href="https://www.facebook.com/tcnjbkad/" class="item dropdown-item"><i class="fab fa-facebook fb"></i></a></li>
-            <li class="nav-item list-item"><a href="https://instagram.com/tcnjbarkada" class="item dropdown-item"><i class="fab fa-instagram-square insta"></i></a></li>
-            <li class="nav-item list-item"><a href="mailto:barkada@tcnj.edu" class="item dropdown-item"><span class="fas fa-envelope email"></span></a></li>
+            <li class="nav-item list-item"><a href="https://www.facebook.com/tcnjaaa/" class="item-inactive dropdown-item"><i class="fab fa-facebook fb"></i></a></li>
+            <li class="nav-item list-item"><a href="https://instagram.com/tcnjaaa" class="item-inactive dropdown-item"><i class="fab fa-instagram-square insta"></i></a></li>
+            <li class="nav-item list-item"><a href="mailto:aaa@tcnj.edu" class="item-inactive dropdown-item"><span class="fas fa-envelope email"></span></a></li>
             <li class="nav-item list-item">
                 <a class="nav-link theme-colors" href="admin/"> Staff Login</a>
             </li>
