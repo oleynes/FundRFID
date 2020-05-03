@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from .forms import MemberForm, LookupForm
 from .models import Member
 from django.shortcuts import redirect
@@ -13,8 +14,11 @@ def register(request):
         member = MemberForm(request.POST)
         if member.is_valid():
             member.save()
-            return redirect('/fundrace/register/success/')
+            messages.add_message(request, messages.INFO, 'Form Submitted Successfully! Use the Fundrace Lookup page '
+                                                         'to check your score!')
+            return redirect('/')
         else:
+            messages.add_message(request, messages.INFO, 'Something went wrong, maybe try again in a few minutes?')
             return redirect('/fundrace/register/')
 
     else:
