@@ -1,10 +1,10 @@
 from django import forms
 from .models import Member
-from crispy_forms.helper import FormHelper
+# from crispy_forms.helper import FormHelper
 
 
 class MemberForm(forms.ModelForm):
-    helper = FormHelper()
+    # helper = FormHelper()
 
     class Meta:
         model = Member
