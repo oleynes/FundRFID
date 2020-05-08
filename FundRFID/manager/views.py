@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import MemberForm, LookupForm
 from .models import Member
 from django.shortcuts import redirect
+import pdb
 # Create your views here.
 
 
@@ -12,17 +13,23 @@ def register(request):
         return render(request, context={'form':form}, template_name='register.html')
     elif request.method == 'POST':
         member = MemberForm(request.POST)
+
         if member.is_valid():
-            member.save()
+            print('inside member valid')
+            post = member.save(commit=False)
+            post.save()
             messages.add_message(request, messages.INFO, 'Form Submitted Successfully! Use the Fundrace Lookup page '
                                                          'to check your score!')
             return redirect('/')
         else:
+
+            print('member was invalid')
             messages.add_message(request, messages.INFO, 'Something went wrong, maybe try again in a few minutes?')
-            return redirect('/fundrace/register/')
+            return render(request, context={'form': MemberForm()}, template_name='register.html')
 
     else:
-        return redirect('/')
+        form = MemberForm()
+        return render(request, context={'form': form}, template_name='register.html')
 
 
 def lookup(request):

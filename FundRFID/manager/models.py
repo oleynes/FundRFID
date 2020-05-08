@@ -1,4 +1,5 @@
 from django.db import models
+from .validators import validate_pawsid
 
 # Create your models here.
 CLASS_YEAR = [
@@ -21,9 +22,9 @@ class Member(models.Model):
 	name = models.CharField(max_length=300)
 	tag_UID = models.CharField(max_length=16, blank=True, verbose_name='Tag UID')
 	email = models.EmailField(max_length=254)
-	score = models.IntegerField(blank=True)
+	score = models.IntegerField(default=0)
 	img = models.ImageField(upload_to=create_upload_url, blank=True, verbose_name='Member Image')
-	PAWS_ID = models.CharField(max_length=6, verbose_name='PAWS ID', primary_key=True)
+	PAWS_ID = models.IntegerField(verbose_name='PAWS ID', primary_key=True, validators=[validate_pawsid])
 	class_year = models.CharField(max_length=2, choices=CLASS_YEAR, default='FR')
 
 
