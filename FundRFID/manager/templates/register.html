@@ -4,9 +4,12 @@
 
 <h2>Please fill in the form below to register* for AAA's FundRace</h2>
 <p>*Please remember to pay [PERSON] $[PRICE] by [DATE]</p>
-<form action="fundrace/register/" method="post">
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="btn-success">
+    </form>
+</div>
 
-    {% load crispy_forms_tag %}
-    {% crispy form %}
-</form>
 {% endblock %}
