@@ -1,11 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block body %}
-<div class="container">
-    <form action="" method="post">
+<div class="container top-pad-100">
+   <!-- <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit">
     </form>
+    -->
+    {% load crispy_forms_tags %}
+    {% crispy form %}
 </div>
 {% endblock %}
+<!-- TODO: add styling -->
