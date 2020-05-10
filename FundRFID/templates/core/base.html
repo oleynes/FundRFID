@@ -19,34 +19,34 @@
 
 <body class="main">
 <nav class="navbar nav-bg nav-bottom-border navbar-expand-xl">
-    <a class="navbar-brand theme-colors " href="/"><img src="{% static 'assets/logo.jpg' %}" class="img-fluid img-thumbnail logo-sz" alt="Asian American Association"></a>
+    <a class="navbar-brand theme-colors " href="{% url 'home' %}"><img src="{% static 'assets/logo.jpg' %}" class="img-fluid img-thumbnail logo-sz" alt="Asian American Association"></a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active list-item">
-                <a class="nav-link btn-gold item" href="about/">About Us</a>
+                <a class="nav-link btn-gold item" href="{% url 'about' %}">About Us</a>
             </li>
             <li class="nav-item dropdown list-item">
                 <a class="nav-link dropdown-toggle btn-red item" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FundRace</a>
                 <div class="dropdown-menu theme-colors" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item item" href="fundrace/register/">Register</a>
-                    <a class="dropdown-item item" href="fundrace/lookup">Check Score</a>
+                    <a class="dropdown-item item" href="{% url 'register' %}">Register</a>
+                    <a class="dropdown-item item" href="{% url 'lookup' %}">Check Score</a>
                 </div>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-gold item" href="events/">Events Calendar</a>
+                <a class="nav-link btn-gold item" href="{% url 'calendar' %}">Events Calendar</a>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-red item" href="forms/">Forms</a>
+                <a class="nav-link btn-red item" href="{% url 'forms-index' %}">Forms</a>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-gold item" href="about/eboard">E-Board</a>
+                <a class="nav-link btn-gold item" href="{% url 'eboard' %}">E-Board</a>
             </li>
 
             {% if user.is_superuser %}
             <li class="nav-item list-item">
                 <a class="nav-link btn-red" href="admin/">Admin</a>
-                <a class="nav-link btn-gold" href="logout/"><span class="fa-red fas fa-sign-in"></span> Logout</a>
+                <a class="nav-link btn-gold" href="logout/"><span class="fa-red fas fa-sign-out"></span> Logout</a>
             </li>
             {% endif %}
             {% block nav %}
