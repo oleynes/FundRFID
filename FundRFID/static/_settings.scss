@@ -30,6 +30,15 @@ $btn-border-sz: 3px;
   font-size: 16px;
 }
 
+.btn-red-alt{
+  background-color: rgba(0, 0, 0, 0.0);
+  color: theme-color("dark");
+  border: $btn-border-sz solid theme-color("red");
+  border-radius: 8px 8px;
+  padding: $navpadding;
+  font-size: 16px;
+}
+
 .btn-inverse{
   background-color: rgba(0, 0, 0, 0.0);
   color: theme-color("dark");
@@ -162,3 +171,22 @@ $btn-border-sz: 3px;
   padding-top: 100px;
 }
 
+.about{
+  margin: 1rem 2rem 1rem 2rem;
+  justify-content: center;
+
+  h1{
+    text-align: center;
+  }
+}
+
+.card-border{
+  border: 2px solid theme-color("dark");
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.top-border{
+  border-top: $btn-border-sz solid theme-color("dark");
+  border-radius: 0px;
+}
