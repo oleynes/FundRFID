@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Logout{% endblock %}
+{% block body %}
+
+<div class="container-fluid">
+    <h1>You've been logged out, click <a href="{% url 'home' %}">here</a> to return to the homepage</h1>
+    <p>To Sign in again click <a href="{% url 'login' %}">here</a></p>
+</div>
+
+{% endblock %}
