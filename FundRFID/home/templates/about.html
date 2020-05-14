@@ -1,1 +1,13 @@
 {% extends 'core/base.html' %}
+{% block title %}About{% endblock %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="about">
+        <h1>TCNJ AAA</h1> <!-- Consider replacing with logo image -->
+        <a href="{% url 'eboard' %}" class="btn btn-red-alt">About Our Executive Board</a>
+        <p>INSERT ABOUT US HERE</p>
+    </div>
+</div>
+
+{% endblock %}
