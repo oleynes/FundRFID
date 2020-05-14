@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api_endpoint',
     'compressor',
     'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,10 @@ COMPRESS_URL = '/static/'
 
 # Crispy Form Setup
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Admin Login
+LOGIN_REDIRECT_URL = 'admin/'
+
+# Image Upload Configs
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
