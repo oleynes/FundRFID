@@ -1,27 +1,34 @@
 {% extends 'core/base.html' %}
-
+{% block title %}Home{% endblock %}
 {% block body %}
 {% load static %}
 <div class="jumbotron theme-colors-inactive">
     <h1 class="display-4">TCNJ Asian American Association</h1>
     <hr class="my-4">
-    <a class="btn btn-yellow btn-lg theme-colors" href="about/" role="button">About Us</a>
+    <a class="btn btn-yellow btn-lg theme-colors" href="{% url 'about' %}" role="button">About Us</a>
 </div>
-<div class="container">
-
+<div class="container-fluid">
     <div class="row">
 
-
-        <div class="col-sm-auto">
-
+    {% for a in announcements %}
+    <div class="col-lg-auto mx-auto">
+    <div class="card card-border">
+        <div class="card-title">
+            <h2>{{ a.name }}</h2>
         </div>
-        <div class="col-md-auto">
-
+        {% if a.has_img %}
+        <div class="card-img-top top-border">
+            <img src="{{ a.img.image.url }}" alt="">
         </div>
-        <div class="col-sm-auto">
-
+        {% endif %}
+        <div class="card-body top-border">
+            <p>{{ a.description }}</p>
         </div>
 
     </div>
+    </div>
+    {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
