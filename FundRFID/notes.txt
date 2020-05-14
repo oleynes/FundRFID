@@ -24,6 +24,8 @@ TODO (4/23):
 -full pre-production bug hunting and tests
 -deployment
 
+-consider adding way to quickly assign tag ids to users perhaps by uploading a file and parsing the data
+
 
 
 
