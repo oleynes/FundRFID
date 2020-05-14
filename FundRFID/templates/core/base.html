@@ -34,7 +34,7 @@
                 </div>
             </li>
             <li class="nav-item list-item">
-                <a class="nav-link btn-gold item" href="{% url 'calendar' %}">Events Calendar</a>
+                <a class="nav-link btn-gold item" href="{% url 'events' %}">Events Calendar</a>
             </li>
             <li class="nav-item list-item">
                 <a class="nav-link btn-red item" href="{% url 'forms-index' %}">Forms</a>
@@ -45,8 +45,10 @@
 
             {% if user.is_superuser %}
             <li class="nav-item list-item">
-                <a class="nav-link btn-red" href="admin/">Admin</a>
-                <a class="nav-link btn-gold" href="logout/"><span class="fa-red fas fa-sign-out"></span> Logout</a>
+                <a class="nav-link btn-red item" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+            <li class="nav-item list-item">
+                <a class="nav-link btn-gold item" href="{% url 'logout' %}"><span class="fa-red fas fa-sign-out"></span> Logout</a>
             </li>
             {% endif %}
             {% block nav %}
@@ -57,7 +59,7 @@
             <li class="nav-item list-item"><a href="https://instagram.com/tcnjaaa" class="item-inactive dropdown-item"><i class="fab fa-instagram-square insta"></i></a></li>
             <li class="nav-item list-item"><a href="mailto:aaa@tcnj.edu" class="item-inactive dropdown-item"><span class="fas fa-envelope email"></span></a></li>
             <li class="nav-item list-item">
-                <a class="nav-link theme-colors" href="admin/"> Staff Login</a>
+                <a class="nav-link theme-colors" href="{% url 'admin:index' %}"> Staff Login</a>
             </li>
         </ul>
     </div>
