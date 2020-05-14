@@ -1,1 +1,28 @@
 {% extends 'core/base.html' %}
+{% block title %}Eboard{% endblock %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row" style="margin-left: 8rem">
+
+
+    {% for member in eboard %}
+    <div class="col-sm-auto py-1" style="padding-top: 10px; padding-bottom: 10px;">
+    <div class="card h-100" style="width: 18rem;">
+        {% if member.has_img %}
+        <img src="{{ member.profile.url }}" alt="" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <h4>{{ member.first_name }} {{ member.last_name }}</h4>
+            <h5>Position: {{ member.get_position_display }}</h5>
+            <h5>Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></h5>
+            <h5>{{ member.get_class_year_display }}</h5>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
