@@ -1,1 +1,29 @@
 {% extends 'core/base.html' %}
+{% block title %}Events{% endblock %}
+{% block body %}
+<div class="container-fluid">
+    {% for event in events %}
+    <div class="row-centered" style="margin-left: 30rem; margin-right: 30rem; padding-top: 10px; padding-bottom: 10px;">
+
+
+    <div class="card card-border">
+        <div class="card-title">
+            <h2>{{ event.name }}</h2>
+        </div>
+        {% if event.has_img %}
+        <div class="card-img-top top-border">
+            <img class="img-fluid" src="{{ event.img.url }}" alt="">
+        </div>
+        {% endif %}
+        <div class="card-body top-border">
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>Date/Time:</strong> {{ event.dt }}</p>
+            <p><strong>Description:</strong> <br> {{ event.description }}</p>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
