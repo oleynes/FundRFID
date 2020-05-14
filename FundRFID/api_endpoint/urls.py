@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from . import views
 
 urlpatterns = [
-
+    path('<str:tag_id>/<int:score>/', views.update_cli, name='update-member-score')
 ]
