@@ -21,5 +21,5 @@ urlpatterns = [
     path('', index, name='home'),
     path('about/', about, name='about'),
     path('about/eboard', eboard, name='eboard'),
-    path('events/', events, name='calendar'),
+    path('events/', events, name='events')
 ]
